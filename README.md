@@ -1,8 +1,8 @@
-# LuxuryDrive - Premium Car Rental Platform 🚗✨
+# LuxuryDrive - Premium Car Rental Platform 
 
 LuxuryDrive is a full-stack luxury car rental web application with a modern React frontend and a robust Node.js/Express backend.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend**: React 19, Vite, Tailwind CSS, Lucide Icons, Swiper, React Router v7, i18next (Arabic, English, French)
 - **Backend**: Node.js, Express, Sequelize ORM, SQLite / MySQL, JWT Authentication, Swagger / OpenAPI Docs
@@ -10,7 +10,7 @@ LuxuryDrive is a full-stack luxury car rental web application with a modern Reac
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ├── backend/
@@ -30,7 +30,7 @@ LuxuryDrive is a full-stack luxury car rental web application with a modern Reac
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
