@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Premium Light Theme */
+  --background: #fcfcfd;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --card: #ffffff;
+  --card-hover: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 25px 50px -12px rgb(0 0 0 / 0.1);
+  --navbar-height: 80px;
+}
+
+.dark {
+  /* Premium Luxury Dark Theme (Navy/Dark-Blue) */
+  --background: #05070a;
+  --surface: #0a0e17;
+  --surface-2: #111827;
+  --card: #0f172a;
+  --card-hover: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --border: #1e293b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --glass-bg: rgba(10, 14, 23, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 25px 50px -12px rgb(0 0 0 / 0.7);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-primary transition-colors duration-300 font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black tracking-tighter text-primary uppercase;
+    line-height: 0.9;
+  }
+
+  p {
+    @apply text-secondary leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .luxury-text {
+    font-family: 'Playfair Display', serif;
+    @apply italic font-normal normal-case tracking-normal;
+  }
+
+  .glass {
+    @apply backdrop-blur-2xl border transition-all duration-300 bg-white/70 border-white/40 dark:bg-black/70 dark:border-white/5;
+  }
+
+  .btn-premium {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] text-white transition-all duration-500 overflow-hidden cursor-pointer active:scale-95 shadow-lg bg-accent;
+  }
+
+  .btn-premium:hover {
+    @apply -translate-y-1 scale-[1.02] bg-accent-hover;
+    box-shadow: 0 20px 40px -10px var(--accent);
+  }
+
+  .input-premium {
+    @apply w-full px-6 py-4 rounded-2xl outline-none transition-all duration-300 border text-sm font-medium bg-surface-2 text-primary;
+    border-color: var(--border);
+  }
+
+  .input-premium:focus {
+    @apply bg-surface;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+
+  .premium-card {
+    @apply bg-card border rounded-[2.5rem] transition-all duration-500 overflow-hidden shadow-md;
+    border-color: var(--border);
+  }
+
+  .premium-card-hover:hover {
+    @apply -translate-y-2 bg-card-hover shadow-lg;
+    border-color: var(--accent);
+  }
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-500/20 rounded-full border-4 border-solid transition-colors;
+  border-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+/* ─── Custom Animations ──────────────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
